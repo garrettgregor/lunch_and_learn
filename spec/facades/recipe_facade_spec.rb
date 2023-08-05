@@ -19,6 +19,16 @@ RSpec.describe RecipeFacade do
           end
         end
       end
+
+      context "sad path" do
+        it "makes recipes to be serialized", :vcr do
+          query = ""
+          recipes = RecipeFacade.new.recipes_by_country(query)
+
+          expect(recipes).to be_an(Array)
+          expect(recipes.size).to eq(0)
+        end
+      end
     end
   end
 end

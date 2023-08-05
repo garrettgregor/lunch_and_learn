@@ -38,5 +38,21 @@ RSpec.describe Api::V1::RecipesController, type: :routing do
         expect(attributes).to have_key(:image)
       end
     end
+
+    it "returns an empty array", :vcr do
+      query = ""
+      visit "/api/v1/recipes?country=#{query}"
+
+      expect(page.status_code).to eq(200)
+
+      response = JSON.parse(page.body, symbolize_names: true)
+
+      expect(response).to have_key(:data)
+      expect(response[:data]).to be_an(Array)
+
+      recipes = response[:data]
+
+      expect(recipes.size).to eq(0)
+    end
   end
 end

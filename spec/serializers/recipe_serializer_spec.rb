@@ -29,4 +29,15 @@ RSpec.describe RecipeSerializer do
       expect(attributes).to have_key(:image)
     end
   end
+
+  it 'will return an empty array for an empty search query', :vcr do
+    query = ""
+    results = RecipeFacade.new.recipes_by_country(query)
+    response = RecipeSerializer.new(results).to_json
+
+    recipes = JSON.parse(response, symbolize_names: true)
+
+    expect(recipes[:data]).to be_an(Array)
+    expect(recipes[:data].size).to eq(0)
+  end
 end
