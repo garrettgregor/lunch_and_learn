@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.edamam.com/api/recipes/v2?app_id=9c028717&app_key=847a590991d215af6af664e60bd35e3b&q=Thailan&type=public
+    uri: https://api.edamam.com/api/recipes/v2?app_id=9c028717&app_key=847a590991d215af6af664e60bd35e3b&q=&type=public
     body:
       encoding: US-ASCII
       string: ''
@@ -39,7 +39,7 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=15552001
       X-Request-Id:
-      - e316b66de2ebecdd0dc64090996c4c82
+      - 547dc5b23584427d19776bf5224bb55a
     body:
       encoding: UTF-8
       string: '{"from":1,"to":0,"count":0,"_links":{},"hits":[]}'

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.edamam.com/api/recipes/v2?app_id=9c028717&app_key=847a590991d215af6af664e60bd35e3b&q=Thailan&type=public
+    uri: https://api.edamam.com/api/recipes/v2?app_id=9c028717&app_key=847a590991d215af6af664e60bd35e3b&q=&type=public
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Sat, 05 Aug 2023 22:08:58 GMT
+      - Sat, 05 Aug 2023 22:11:05 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -39,9 +39,9 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=15552001
       X-Request-Id:
-      - e316b66de2ebecdd0dc64090996c4c82
+      - b8d36dc8e68e6defd9fdcb9950f6b579
     body:
       encoding: UTF-8
       string: '{"from":1,"to":0,"count":0,"_links":{},"hits":[]}'
-  recorded_at: Sat, 05 Aug 2023 22:08:58 GMT
+  recorded_at: Sat, 05 Aug 2023 22:11:05 GMT
 recorded_with: VCR 6.2.0
