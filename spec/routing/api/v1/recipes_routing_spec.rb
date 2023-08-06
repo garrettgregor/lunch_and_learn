@@ -7,7 +7,6 @@ RSpec.describe Api::V1::RecipesController, type: :routing do
         expect(get: "/api/v1/recipes").to route_to("api/v1/recipes#index")
       end
 
-      ## Question: is this the correct way to be testing the response?
       it "returns recipes for a specific country", :vcr do
         query = "Thailand"
         visit "/api/v1/recipes?country=#{query}"
