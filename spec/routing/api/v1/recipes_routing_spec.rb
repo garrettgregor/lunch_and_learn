@@ -40,8 +40,17 @@ RSpec.describe Api::V1::RecipesController, type: :routing do
       end
 
       it "returns recipes for an empty query", :vcr do
-        query = ""
-        visit "/api/v1/recipes?country=#{query}"
+        countries_data = File.read("./spec/fixtures/manual_data/recipe_data/countries.json")
+        saudi = File.read("./spec/fixtures/manual_data/recipe_data/saudi.json")
+
+        stub_request(:get, "http://api.edamam.com/api/recipes/v2?app_id=9c028717&app_key=847a590991d215af6af664e60bd35e3b&type=public&q=Argentina")
+          .to_return(status: 200, body: saudi)
+
+        stub_request(:get, "https://restcountries.com/v3.1/all?fields=name")
+          .to_return(status: 200, body: countries_data)
+
+        random_country = ""
+        visit "/api/v1/recipes?country=#{random_country}"
 
         expect(page.status_code).to eq(200)
 
