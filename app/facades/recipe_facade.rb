@@ -6,6 +6,7 @@ class RecipeFacade
   end
 
   private
+
   def service
     RecipeService.new
   end

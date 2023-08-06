@@ -8,6 +8,7 @@ class CountryFacade
   end
 
   private
+
   def service
     CountryService.new
   end
