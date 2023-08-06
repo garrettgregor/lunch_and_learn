@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Sun, 06 Aug 2023 04:12:09 GMT
+      - Sun, 06 Aug 2023 04:12:07 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -39,9 +39,9 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=15552001
       X-Request-Id:
-      - 21cf277f91224d36bb0c63ea2bc1d446
+      - dda7128eb555d649b95c56cb6b1f0b02
     body:
       encoding: UTF-8
       string: '{"from":1,"to":0,"count":0,"_links":{},"hits":[]}'
-  recorded_at: Sun, 06 Aug 2023 04:12:09 GMT
+  recorded_at: Sun, 06 Aug 2023 04:12:07 GMT
 recorded_with: VCR 6.2.0
