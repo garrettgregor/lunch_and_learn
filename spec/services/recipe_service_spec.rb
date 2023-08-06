@@ -28,7 +28,7 @@ RSpec.describe RecipeService do
 
       context "sad path" do
         it "returns an empty list of recipes from an empty search query", :vcr do
-          query = ""
+          query = "78905"
           results = RecipeService.new.search(query)
 
           expect(results).to be_a(Hash)

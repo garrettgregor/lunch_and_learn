@@ -30,8 +30,8 @@ RSpec.describe RecipeSerializer do
     end
   end
 
-  it "will return an empty array for an empty search query", :vcr do
-    query = ""
+  it "will return an empty array for an invalid search query", :vcr do
+    query = "78905"
     results = RecipeFacade.new.recipes_by_country(query)
     response = RecipeSerializer.new(results).to_json
 

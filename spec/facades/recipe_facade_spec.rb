@@ -7,7 +7,7 @@ RSpec.describe RecipeFacade do
         it "makes recipes to be serialized", :vcr do
           query = "Thailand"
           recipes = RecipeFacade.new.recipes_by_country(query)
-
+          
           expect(recipes).to be_an(Array)
 
           recipes.each do |recipe|
@@ -22,7 +22,7 @@ RSpec.describe RecipeFacade do
 
       context "sad path" do
         it "makes recipes to be serialized", :vcr do
-          query = ""
+          query = "78905"
           recipes = RecipeFacade.new.recipes_by_country(query)
 
           expect(recipes).to be_an(Array)
