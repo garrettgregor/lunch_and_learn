@@ -1,7 +1,7 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe RecipeSerializer do
-  it 'should serialize recipes', :vcr do
+  it "should serialize recipes", :vcr do
     query = "Thailand"
     results = RecipeFacade.new.recipes_by_country(query)
     response = RecipeSerializer.new(results).to_json
@@ -30,7 +30,7 @@ RSpec.describe RecipeSerializer do
     end
   end
 
-  it 'will return an empty array for an empty search query', :vcr do
+  it "will return an empty array for an empty search query", :vcr do
     query = ""
     results = RecipeFacade.new.recipes_by_country(query)
     response = RecipeSerializer.new(results).to_json

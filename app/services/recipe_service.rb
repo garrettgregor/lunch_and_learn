@@ -9,10 +9,10 @@ class RecipeService
   end
 
   def conn
-    Faraday.new(url: 'https://api.edamam.com/') do |f|
-      f.params['app_id'] = ENV['EDAMAM_APP_ID']
-      f.params['app_key'] = ENV['EDAMAM_APP_KEY']
-      f.params['type'] = "public"
+    Faraday.new(url: "https://api.edamam.com/") do |f|
+      f.params["app_id"] = ENV["EDAMAM_APP_ID"]
+      f.params["app_key"] = ENV["EDAMAM_APP_KEY"]
+      f.params["type"] = "public"
     end
   end
 end
