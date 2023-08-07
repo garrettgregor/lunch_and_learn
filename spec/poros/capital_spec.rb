@@ -9,4 +9,3 @@ RSpec.describe Capital do
     expect(capital.name).to eq("Abuja")
   end
 end
-
