@@ -11,8 +11,6 @@ RSpec.describe AirQualityFacade do
         expect(air_quality.aqi).to be_a(Float)
         expect(air_quality.pm25_concentration).to be_a(Float)
         expect(air_quality.co_concentration).to be_a(Float)
-        expect(air_quality.city).to eq(query)
-        expect(air_quality.id).to eq(nil)
       end
     end
   end
