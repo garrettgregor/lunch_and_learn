@@ -10,4 +10,8 @@ class Video
     @country          = country
     @id               = nil
   end
+
+  def images
+    PhotoFacade.new.photos_from(@country)
+  end
 end

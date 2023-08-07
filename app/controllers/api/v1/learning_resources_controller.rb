@@ -9,7 +9,8 @@ module Api
         #   recipes = RecipeFacade.new.recipes_by_country(params[:country])
         # end
         video = VideoFacade.new.video_resources(params[:country])
-
+        photos = PhotoFacade.new.photos_from(params[:country])
+        
         render json: LearningResourcesSerializer.new(video), status: :ok
       end
     end
