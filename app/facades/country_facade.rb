@@ -1,4 +1,10 @@
 class CountryFacade
+  def capital_of(country)
+    capital_data = service.capital_of(country)
+
+    @city = Capital.new(capital_data.first)
+  end
+
   def random_country
     countries_data = service.country_names
 

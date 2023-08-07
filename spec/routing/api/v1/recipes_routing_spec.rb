@@ -59,9 +59,7 @@ RSpec.describe Api::V1::RecipesController, type: :routing do
         expect(response).to have_key(:data)
         expect(response[:data]).to be_an(Array)
 
-        recipes = response[:data]
-
-        recipes.each do |recipe|
+        response[:data].each do |recipe|
           expect(recipe).to have_key(:id)
           expect(recipe[:id]).to eq(nil)
 
@@ -71,12 +69,10 @@ RSpec.describe Api::V1::RecipesController, type: :routing do
           expect(recipe).to have_key(:attributes)
           expect(recipe[:attributes]).to be_a(Hash)
 
-          attributes = recipe[:attributes]
-
-          expect(attributes).to have_key(:title)
-          expect(attributes).to have_key(:url)
-          expect(attributes).to have_key(:country)
-          expect(attributes).to have_key(:image)
+          expect(recipe[:attributes]).to have_key(:title)
+          expect(recipe[:attributes]).to have_key(:url)
+          expect(recipe[:attributes]).to have_key(:country)
+          expect(recipe[:attributes]).to have_key(:image)
         end
       end
 
