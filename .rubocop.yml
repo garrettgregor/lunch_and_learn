@@ -42,6 +42,7 @@ Metrics/MethodLength:
   Exclude:
     - spec/mock_data/photo_data.rb
     - spec/mock_data/video_data.rb
+    - app/serializers/air_quality_serializer.rb
 
 Naming/VariableNumber:
   Exclude:
@@ -56,8 +57,6 @@ Style/StringLiterals:
   SupportedStyles:
     - single_quotes
     - double_quotes
-  # If `true`, strings which span multiple lines using `\` for continuation must
-  # use the same type of quotes on each line.
   ConsistentQuotesInMultiline: false
 
 Style/FrozenStringLiteralComment:
