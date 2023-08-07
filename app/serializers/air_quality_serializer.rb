@@ -20,5 +20,5 @@ class AirQualitySerializer
 
   # set_type :air_quality
 
-  # attributes :aqi, :pm25_concentration, :co_concentration, :city
+  # attributes :aqi, :pm25_concentration, :co_concentration
 end
