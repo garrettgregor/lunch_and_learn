@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 07 Aug 2023 17:09:44 GMT
+      - Mon, 07 Aug 2023 23:23:11 GMT
       Server:
       - Apache/2.4.38 (Debian)
       Cache-Control:
@@ -31,5 +31,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '[{"capital":["Paris"]}]'
-  recorded_at: Mon, 07 Aug 2023 17:09:43 GMT
+  recorded_at: Mon, 07 Aug 2023 23:23:11 GMT
 recorded_with: VCR 6.2.0
