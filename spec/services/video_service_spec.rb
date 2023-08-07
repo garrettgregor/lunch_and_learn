@@ -30,7 +30,7 @@ RSpec.describe VideoService do
 
       context "sad path" do
         it "returns an empty list of videos for an an empty search query"
-      #     query = "78905"
+        #     query = "78905"
         # end
       end
     end

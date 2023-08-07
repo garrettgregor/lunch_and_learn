@@ -28,15 +28,15 @@ RSpec.describe PhotoService do
       end
 
       context "sad path" do
-      #   xit "returns an empty list of recipes from an empty search query", :vcr do
-      #     query = "78905"
-      #     results = RecipeService.new.search(query)
+        #   xit "returns an empty list of recipes from an empty search query", :vcr do
+        #     query = "78905"
+        #     results = RecipeService.new.search(query)
 
-      #     expect(results).to be_a(Hash)
-      #     expect(results).to have_key(:hits)
-      #     expect(results[:hits]).to be_an(Array)
-      #     expect(results[:hits].size).to eq(0)
-      #   end
+        #     expect(results).to be_a(Hash)
+        #     expect(results).to have_key(:hits)
+        #     expect(results[:hits]).to be_an(Array)
+        #     expect(results[:hits].size).to eq(0)
+        #   end
       end
     end
   end

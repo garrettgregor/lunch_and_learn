@@ -27,15 +27,21 @@ Metrics/CyclomaticComplexity:
 
 Metrics/BlockLength:
   IgnoredMethods: ['describe', 'context']
+  Exclude:
+    - spec/mock_data/photo_data.rb
+    - spec/mock_data/video_data.rb
 
 Layout/LineLength:
   Exclude:
     - 'bin/**/*'
     - spec/helper_methods.rb
+    - spec/mock_data/photo_data.rb
+    - spec/mock_data/video_data.rb
 
 Metrics/MethodLength:
   Exclude:
-    - spec/helper_methods.rb
+    - spec/mock_data/photo_data.rb
+    - spec/mock_data/video_data.rb
 
 Naming/VariableNumber:
   Exclude:
