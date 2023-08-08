@@ -13,4 +13,15 @@ class ErrorSerializer
       ]
     }
   end
+
+  def credential_errors
+    {
+      errors: [
+        {
+          status: "401",
+          title: @error
+        }
+      ]
+    }
+  end
 end
