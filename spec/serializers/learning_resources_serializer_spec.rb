@@ -34,4 +34,29 @@ RSpec.describe LearningResourcesSerializer, type: :serializer do
       end
     end
   end
+
+  describe "sad path" do
+    it "should serialize empty learning resources", :vcr do
+      query = "Nameofcountry"
+      video = VideoFacade.new.video_resources(query)
+      photos = PhotoFacade.new.photos_from(query)
+      response = LearningResourcesSerializer.serialize_no_videos(query)
+
+      expect(response).to have_key(:data)
+      expect(response[:data]).to be_a(Hash)
+      expect(response[:data][:id]).to be(nil)
+      expect(response[:data][:type]).to eq("learning_resource")
+      expect(response[:data][:attributes]).to be_a(Hash)
+
+      attributes = response[:data][:attributes]
+
+      expect(attributes[:country]).to eq(query)
+      expect(attributes[:video]).to be_a(Hash)
+      expect(attributes[:video].size).to eq(0)
+
+      expect(attributes).to have_key(:images)
+      expect(attributes[:images]).to be_an(Array)
+      expect(attributes[:images].size).to eq(0)
+    end
+  end
 end
