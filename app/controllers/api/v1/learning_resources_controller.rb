@@ -5,6 +5,7 @@ module Api
         # Refactor: fix bugs for regex errors
         # Below is close, but doesn't work for Åland Islands
         ## query = params[:country].chars.map { |char| char.ascii_only? ? char : CGI.escape(char) }.join
+        # refactor to a LearningResourcesFacade?
         if params[:country].blank?
           country = CountryFacade.new.random_country.name
           video = VideoFacade.new.video_resources(country)
