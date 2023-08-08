@@ -6,15 +6,9 @@ module Api
         # Below is close, but doesn't work for Åland Islands
         ## query = params[:country].chars.map { |char| char.ascii_only? ? char : CGI.escape(char) }.join
         # refactor to a LearningResourcesFacade?
-        if params[:country].blank?
-          country = CountryFacade.new.random_country.name
-          video = VideoFacade.new.video_resources(country)
-          photos = PhotoFacade.new.photos_from(country)
-        else
-          country = params[:country]
-          video = VideoFacade.new.video_resources(country)
-          photos = PhotoFacade.new.photos_from(country)
-        end
+        country = (params[:country].presence || CountryFacade.new.random_country.name)
+        video = VideoFacade.new.video_resources(country)
+        photos = PhotoFacade.new.photos_from(country)
 
         if video == {}
           render json: LearningResourcesSerializer.serialize_no_videos(country), status: :ok

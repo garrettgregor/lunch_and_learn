@@ -9,7 +9,7 @@ RSpec.describe Api::V1::LearningResourcesController, type: :routing do
 
       it "returns learning resources for a specific country", :vcr do
         country = "Nigeria"
-        visit api_v1_learning_resources_path(country: country)
+        visit api_v1_learning_resources_path(country:)
 
         expect(page.status_code).to eq(200)
 
