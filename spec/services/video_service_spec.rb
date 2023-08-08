@@ -29,9 +29,15 @@ RSpec.describe VideoService do
       end
 
       context "sad path" do
-        it "returns an empty list of videos for an an empty search query"
-        #     query = "78905"
-        # end
+        it "returns an empty list of videos for an an empty search query", :vcr do
+          query = "Nameofcountry"
+          results = VideoService.new.mrhistory_videos(query)
+
+          expect(results).to be_a(Hash)
+          expect(results).to have_key(:items)
+          expect(results[:items]).to be_an(Array)
+          expect(results[:items].size).to eq(0)
+        end
       end
     end
   end
