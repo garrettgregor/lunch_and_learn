@@ -1,0 +1,92 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://restcountries.com/v3.1/name/Greece?fields=capital
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 08 Aug 2023 16:23:28 GMT
+      Server:
+      - Apache/2.4.38 (Debian)
+      Cache-Control:
+      - public, immutable, max-age=31556926
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '24'
+    body:
+      encoding: UTF-8
+      string: '[{"capital":["Athens"]}]'
+  recorded_at: Tue, 08 Aug 2023 16:23:28 GMT
+- request:
+    method: get
+    uri: https://api.api-ninjas.com/v1/airquality?city=Athens
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Api-Key:
+      - API_NINJA_API_KEY
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '277'
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 08 Aug 2023 16:23:29 GMT
+      X-Amzn-Requestid:
+      - 564f8eb3-3e73-45eb-995a-63305c363806
+      Access-Control-Allow-Origin:
+      - "*"
+      Allow:
+      - GET, OPTIONS, POST
+      Access-Control-Allow-Headers:
+      - "*"
+      X-Amz-Apigw-Id:
+      - JWXQKHmmvHcFcYA=
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS, POST
+      X-Amzn-Trace-Id:
+      - Root=1-64d26c00-58747aac66cb01a854d8f7e6;Sampled=0;lineage=d5ca6d75:0
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 d7b3fa0ef559ab3ac226fc78e47d311a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P1
+      X-Amz-Cf-Id:
+      - 2Y3TBzawidZEZGFBYin3V4xN-acm6PMKchE4qNyCNJNaRj-YfkefIA==
+    body:
+      encoding: UTF-8
+      string: '{"CO": {"concentration": 233.65, "aqi": 2}, "NO2": {"concentration":
+        2.23, "aqi": 2}, "O3": {"concentration": 103, "aqi": 170}, "SO2": {"concentration":
+        4.35, "aqi": 6}, "PM2.5": {"concentration": 6.95, "aqi": 22}, "PM10": {"concentration":
+        9.33, "aqi": 8}, "overall_aqi": 170}'
+  recorded_at: Tue, 08 Aug 2023 16:23:29 GMT
+recorded_with: VCR 6.2.0
