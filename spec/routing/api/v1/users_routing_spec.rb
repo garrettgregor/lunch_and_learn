@@ -1,10 +1,10 @@
 require "rails_helper"
 
 RSpec.describe Api::V1::UsersController, type: :routing do
-  describe "#index" do
+  describe "#create" do
     context "happy path" do
-      it "routes to #index" do
-        expect(get: api_v1_users_path).to route_to("api/v1/users#index")
+      it "routes to #create" do
+        expect(post: api_v1_users_path).to route_to("api/v1/users#create")
       end
     end
   end
