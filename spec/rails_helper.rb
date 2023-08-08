@@ -80,7 +80,10 @@ end
 VCR.configure do |config|
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
   config.hook_into :webmock
-  # Uncomment for filtering api keys
-  # config.filter_sensitive_data('tmdb_key') { ENV['tmdb_key'] }
+  config.filter_sensitive_data("EDAMAM_APP_KEY") { ENV["EDAMAM_APP_KEY"] }
+  config.filter_sensitive_data("EDAMAM_APP_ID") { ENV["EDAMAM_APP_ID"] }
+  config.filter_sensitive_data("YOUTUBE_API_KEY") { ENV["YOUTUBE_API_KEY"] }
+  config.filter_sensitive_data("UNSPLASH_API_KEY") { ENV["UNSPLASH_API_KEY"] }
+  config.filter_sensitive_data("API_NINJA_API_KEY") { ENV["API_NINJA_API_KEY"] }
   config.configure_rspec_metadata!
 end

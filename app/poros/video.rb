@@ -1,17 +1,9 @@
 class Video
   attr_reader :title,
-              :youtube_video_id,
-              :country,
-              :id
+              :youtube_video_id
 
-  def initialize(data, country)
+  def initialize(data)
     @title            = data[:snippet][:title]
     @youtube_video_id = data[:id][:videoId]
-    @country          = country
-    @id               = nil
-  end
-
-  def images
-    PhotoFacade.new.photos_from(@country)
   end
 end

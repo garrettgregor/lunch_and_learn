@@ -2,16 +2,19 @@ module Api
   module V1
     class LearningResourcesController < ApplicationController
       def index
-        # if params[:country] == ""
-        #   random_country = CountryFacade.new.random_country
-        #   recipes = RecipeFacade.new.recipes_by_country(random_country.name)
-        # else
-        #   recipes = RecipeFacade.new.recipes_by_country(params[:country])
-        # end
-        video = VideoFacade.new.video_resources(params[:country])
-        PhotoFacade.new.photos_from(params[:country])
+        # Refactor: fix bugs for regex errors
+        # Below is close, but doesn't work for Åland Islands
+        ## query = params[:country].chars.map { |char| char.ascii_only? ? char : CGI.escape(char) }.join
+        # refactor to a LearningResourcesFacade?
+        country = (params[:country].presence || CountryFacade.new.random_country.name)
+        video = VideoFacade.new.video_resources(country)
+        photos = PhotoFacade.new.photos_from(country)
 
-        render json: LearningResourcesSerializer.new(video), status: :ok
+        if video == {}
+          render json: LearningResourcesSerializer.serialize_no_videos(country), status: :ok
+        else
+          render json: LearningResourcesSerializer.serialize(country, video, photos), status: :ok
+        end
       end
     end
   end

@@ -26,7 +26,7 @@ Metrics/CyclomaticComplexity:
   Enabled: false
 
 Metrics/BlockLength:
-  IgnoredMethods: ['describe', 'context']
+  IgnoredMethods: ['describe', 'context', 'it']
   Exclude:
     - spec/mock_data/photo_data.rb
     - spec/mock_data/video_data.rb
@@ -43,6 +43,7 @@ Metrics/MethodLength:
     - spec/mock_data/photo_data.rb
     - spec/mock_data/video_data.rb
     - app/serializers/air_quality_serializer.rb
+    - app/serializers/learning_resources_serializer.rb
 
 Naming/VariableNumber:
   Exclude:
