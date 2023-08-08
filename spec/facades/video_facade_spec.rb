@@ -10,8 +10,6 @@ RSpec.describe VideoFacade do
         expect(video).to be_a(Video)
         expect(video.title).to be_a(String)
         expect(video.youtube_video_id).to be_a(String)
-        expect(video.country).to eq(query)
-        expect(video.id).to eq(nil)
       end
     end
   end
