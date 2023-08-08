@@ -61,8 +61,9 @@ RSpec.describe "Sessions Post Request" do
 
       parsed = JSON.parse(response.body, symbolize_names: true)
 
-      expect(parsed).to have_key(:error)
-      expect(parsed[:error]).to eq("Invalid Email or Password")
+      expect(parsed).to have_key(:errors)
+      expect(parsed[:errors].first[:status]).to eq("401")
+      expect(parsed[:errors].first[:title]).to eq("Invalid Email or Password")
     end
 
     it "renders credential errors when it can't authenticate with password" do
@@ -73,8 +74,9 @@ RSpec.describe "Sessions Post Request" do
 
       parsed = JSON.parse(response.body, symbolize_names: true)
 
-      expect(parsed).to have_key(:error)
-      expect(parsed[:error]).to eq("Invalid Email or Password")
+      expect(parsed).to have_key(:errors)
+      expect(parsed[:errors].first[:status]).to eq("401")
+      expect(parsed[:errors].first[:title]).to eq("Invalid Email or Password")
     end
   end
 end
