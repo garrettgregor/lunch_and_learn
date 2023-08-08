@@ -33,6 +33,22 @@ class LearningResourcesSerializer
     }
   end
 
+  def self.serialize_no_videos(country)
+    {
+      data:
+      {
+        id: nil,
+        type: "learning_resource",
+        attributes:
+        {
+          country: country,
+          video: {},
+          images: []
+        }
+      }
+    }
+  end
+
   ## Question: how to do the same thing with JSONAPI::Serializer
   # include JSONAPI::Serializer
   # set_type :learning_resource
