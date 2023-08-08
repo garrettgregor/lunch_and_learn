@@ -2,7 +2,7 @@ module Api
   module V1
     class AirQualityController < ApplicationController
       def index
-        if params[:country] == ""
+        if params[:country].blank?
           random_country = CountryFacade.new.random_country
           capital = CountryFacade.new.capital_of(random_country.name)
         else
