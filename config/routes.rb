@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :recipes, only: %i[index]
       resources :learning_resources, only: %i[index]
       resources :air_quality, only: %i[index]
+      resources :users, only: %i[create]
     end
   end
 end
