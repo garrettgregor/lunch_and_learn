@@ -68,5 +68,28 @@ RSpec.describe "Users Post Request" do
              params: invalid_password_confirmation, headers: valid_headers, as: :json
       end.to_not change(User, :count)
     end
+
+    it "returns an error when email is already taken with respect to case" do
+      User.create!(valid_attributes)
+
+      case_sensitive_params = {
+        name: "Odell",
+        email: "Goodboy1@ruffruff.com",
+        password: "treats4lyf",
+        password_confirmation: "treats4lyf"
+      }
+
+      post api_v1_users_path, params: case_sensitive_params.to_json, headers: valid_headers
+
+      expect(response.status).to eq(404)
+      message = JSON.parse(response.body, symbolize_names: true)
+      error = "Email has already been taken"
+      expect(message[:errors].first[:title].first).to eq(error)
+
+      expect do
+        post api_v1_users_path,
+             params: invalid_password_confirmation, headers: valid_headers, as: :json
+      end.to_not change(User, :count)
+    end
   end
 end
