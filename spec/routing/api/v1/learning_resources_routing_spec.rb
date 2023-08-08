@@ -10,7 +10,7 @@ RSpec.describe Api::V1::LearningResourcesController, type: :routing do
       it "returns learning resources for a specific country", :vcr do
         country = "Nigeria"
         video = VideoFacade.new.video_resources(country)
-        photos = PhotoFacade.new.photos_from(country)
+        PhotoFacade.new.photos_from(country)
         visit "/api/v1/learning_resources?country=#{country}"
 
         expect(page.status_code).to eq(200)
@@ -57,7 +57,7 @@ RSpec.describe Api::V1::LearningResourcesController, type: :routing do
         visit "/api/v1/recipes?country=#{random_country}"
         country = CountryFacade.new.random_country.name
         video = VideoFacade.new.video_resources(country)
-        photos = PhotoFacade.new.photos_from(country)
+        PhotoFacade.new.photos_from(country)
         visit "/api/v1/learning_resources?country=#{country}"
 
         expect(page.status_code).to eq(200)

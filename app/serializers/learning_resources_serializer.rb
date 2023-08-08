@@ -7,7 +7,7 @@ class LearningResourcesSerializer
         type: "learning_resource",
         attributes:
         {
-          country: country,
+          country:,
           video:
           ## Question: try to rescue with empty hash for video and empty array for photos
           # if video == {}
@@ -41,7 +41,7 @@ class LearningResourcesSerializer
         type: "learning_resource",
         attributes:
         {
-          country: country,
+          country:,
           video: {},
           images: []
         }

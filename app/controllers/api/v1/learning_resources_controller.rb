@@ -11,10 +11,10 @@ module Api
           photos = PhotoFacade.new.photos_from(country)
         else
           country = params[:country]
-          video = VideoFacade.new.video_resources(params[:country])
-          photos = PhotoFacade.new.photos_from(params[:country])
+          video = VideoFacade.new.video_resources(country)
+          photos = PhotoFacade.new.photos_from(country)
         end
-        
+
         if video == {}
           render json: LearningResourcesSerializer.serialize_no_videos(country), status: :ok
         else

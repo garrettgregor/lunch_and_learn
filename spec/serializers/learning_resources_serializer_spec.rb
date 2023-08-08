@@ -38,8 +38,8 @@ RSpec.describe LearningResourcesSerializer, type: :serializer do
   describe "sad path" do
     it "should serialize empty learning resources", :vcr do
       query = "Nameofcountry"
-      video = VideoFacade.new.video_resources(query)
-      photos = PhotoFacade.new.photos_from(query)
+      VideoFacade.new.video_resources(query)
+      PhotoFacade.new.photos_from(query)
       response = LearningResourcesSerializer.serialize_no_videos(query)
 
       expect(response).to have_key(:data)

@@ -6,7 +6,6 @@ RSpec.describe Video do
   end
 
   it "makes video objects" do
-    country = "Thailand"
     video = Video.new(thailand_video)
 
     expect(video.title).to eq(thailand_video[:snippet][:title])
