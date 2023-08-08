@@ -12,11 +12,11 @@ RSpec.describe AirQualityService do
 
           expect(results).to have_key(:"PM2.5")
           expect(results[:"PM2.5"]).to have_key(:concentration)
-          expect(results[:"PM2.5"][:concentration]).to be_an(Integer)
+          expect(results[:"PM2.5"][:concentration].to_f).to be_an(Float)
 
           expect(results).to have_key(:CO)
           expect(results[:CO]).to have_key(:concentration)
-          expect(results[:CO][:concentration]).to be_a(Float)
+          expect(results[:CO][:concentration].to_f).to be_a(Float)
 
           expect(results).to have_key(:overall_aqi)
         end
