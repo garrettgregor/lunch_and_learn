@@ -4,7 +4,7 @@
     "count": 152,
     "_links": {
         "next": {
-            "href": "https://api.edamam.com/api/recipes/v2?q=Greece&app_key=847a590991d215af6af664e60bd35e3b&_cont=CHcVQBtNNQphDmgVQ3tAEX4BYVdtDQQPQGBICmsQZlZzBgQCUXlSC2BHawQmAVFUEm0VCzNAagF0BwUAF2EWCmFGawd0BFUVLnlSVSBMPkd5BgMbUSYRVTdgMgksRlpSAAcRXTVGcV84SU4%3D&type=public&app_id=9c028717",
+            "href": "https://api.edamam.com/api/recipes/v2?q=Greece&app_key=#{ENV['EDAMAM_APP_KEY']}&_cont=CHcVQBtNNQphDmgVQ3tAEX4BYVdtDQQPQGBICmsQZlZzBgQCUXlSC2BHawQmAVFUEm0VCzNAagF0BwUAF2EWCmFGawd0BFUVLnlSVSBMPkd5BgMbUSYRVTdgMgksRlpSAAcRXTVGcV84SU4%3D&type=public&app_id=9c028717",
             "title": "Next page"
         }
     },
@@ -812,7 +812,7 @@
             "_links": {
                 "self": {
                     "title": "Self",
-                    "href": "https://api.edamam.com/api/recipes/v2/933d6d8397158ecbe7e705c4d9c00460?type=public&app_id=9c028717&app_key=847a590991d215af6af664e60bd35e3b"
+                    "href": "https://api.edamam.com/api/recipes/v2/933d6d8397158ecbe7e705c4d9c00460?type=public&app_id=9c028717&app_key=#{ENV['EDAMAM_APP_KEY']}"
                 }
             }
         },
@@ -1603,7 +1603,7 @@
             "_links": {
                 "self": {
                     "title": "Self",
-                    "href": "https://api.edamam.com/api/recipes/v2/56fafe2156fdf1b992bac42ac2a6b35c?type=public&app_id=9c028717&app_key=847a590991d215af6af664e60bd35e3b"
+                    "href": "https://api.edamam.com/api/recipes/v2/56fafe2156fdf1b992bac42ac2a6b35c?type=public&app_id=9c028717&app_key=#{ENV['EDAMAM_APP_KEY']}"
                 }
             }
         },
@@ -2357,7 +2357,7 @@
             "_links": {
                 "self": {
                     "title": "Self",
-                    "href": "https://api.edamam.com/api/recipes/v2/c391c51166b48dc3ffd62c3d395b4b41?type=public&app_id=9c028717&app_key=847a590991d215af6af664e60bd35e3b"
+                    "href": "https://api.edamam.com/api/recipes/v2/c391c51166b48dc3ffd62c3d395b4b41?type=public&app_id=9c028717&app_key=#{ENV['EDAMAM_APP_KEY']}"
                 }
             }
         },
@@ -3155,7 +3155,7 @@
             "_links": {
                 "self": {
                     "title": "Self",
-                    "href": "https://api.edamam.com/api/recipes/v2/451752683a41d035de72f9a542f39ffb?type=public&app_id=9c028717&app_key=847a590991d215af6af664e60bd35e3b"
+                    "href": "https://api.edamam.com/api/recipes/v2/451752683a41d035de72f9a542f39ffb?type=public&app_id=9c028717&app_key=#{ENV['EDAMAM_APP_KEY']}"
                 }
             }
         },
@@ -3959,7 +3959,7 @@
             "_links": {
                 "self": {
                     "title": "Self",
-                    "href": "https://api.edamam.com/api/recipes/v2/a901c0242315d072368302d6741689b3?type=public&app_id=9c028717&app_key=847a590991d215af6af664e60bd35e3b"
+                    "href": "https://api.edamam.com/api/recipes/v2/a901c0242315d072368302d6741689b3?type=public&app_id=9c028717&app_key=#{ENV['EDAMAM_APP_KEY']}"
                 }
             }
         },
@@ -4825,7 +4825,7 @@
             "_links": {
                 "self": {
                     "title": "Self",
-                    "href": "https://api.edamam.com/api/recipes/v2/bd1cf617e96180f05d9865ec131bec95?type=public&app_id=9c028717&app_key=847a590991d215af6af664e60bd35e3b"
+                    "href": "https://api.edamam.com/api/recipes/v2/bd1cf617e96180f05d9865ec131bec95?type=public&app_id=9c028717&app_key=#{ENV['EDAMAM_APP_KEY']}"
                 }
             }
         },
@@ -5614,7 +5614,7 @@
             "_links": {
                 "self": {
                     "title": "Self",
-                    "href": "https://api.edamam.com/api/recipes/v2/66ee99e5250e2010ffb73fd7b0dc62cb?type=public&app_id=9c028717&app_key=847a590991d215af6af664e60bd35e3b"
+                    "href": "https://api.edamam.com/api/recipes/v2/66ee99e5250e2010ffb73fd7b0dc62cb?type=public&app_id=9c028717&app_key=#{ENV['EDAMAM_APP_KEY']}"
                 }
             }
         },
@@ -6466,7 +6466,7 @@
             "_links": {
                 "self": {
                     "title": "Self",
-                    "href": "https://api.edamam.com/api/recipes/v2/8f4adaef02c3fffd1606c61bb8653952?type=public&app_id=9c028717&app_key=847a590991d215af6af664e60bd35e3b"
+                    "href": "https://api.edamam.com/api/recipes/v2/8f4adaef02c3fffd1606c61bb8653952?type=public&app_id=9c028717&app_key=#{ENV['EDAMAM_APP_KEY']}"
                 }
             }
         },
@@ -7356,7 +7356,7 @@
             "_links": {
                 "self": {
                     "title": "Self",
-                    "href": "https://api.edamam.com/api/recipes/v2/4f6a497f67fc6556f74ee80388c25b78?type=public&app_id=9c028717&app_key=847a590991d215af6af664e60bd35e3b"
+                    "href": "https://api.edamam.com/api/recipes/v2/4f6a497f67fc6556f74ee80388c25b78?type=public&app_id=9c028717&app_key=#{ENV['EDAMAM_APP_KEY']}"
                 }
             }
         },
@@ -8110,7 +8110,7 @@
             "_links": {
                 "self": {
                     "title": "Self",
-                    "href": "https://api.edamam.com/api/recipes/v2/27b4cb96a1ec918f07e53938465d2ac2?type=public&app_id=9c028717&app_key=847a590991d215af6af664e60bd35e3b"
+                    "href": "https://api.edamam.com/api/recipes/v2/27b4cb96a1ec918f07e53938465d2ac2?type=public&app_id=9c028717&app_key=#{ENV['EDAMAM_APP_KEY']}"
                 }
             }
         },
@@ -8910,7 +8910,7 @@
             "_links": {
                 "self": {
                     "title": "Self",
-                    "href": "https://api.edamam.com/api/recipes/v2/2bedf2af89347c983b59eadd801c8378?type=public&app_id=9c028717&app_key=847a590991d215af6af664e60bd35e3b"
+                    "href": "https://api.edamam.com/api/recipes/v2/2bedf2af89347c983b59eadd801c8378?type=public&app_id=9c028717&app_key=#{ENV['EDAMAM_APP_KEY']}"
                 }
             }
         },
@@ -9712,7 +9712,7 @@
             "_links": {
                 "self": {
                     "title": "Self",
-                    "href": "https://api.edamam.com/api/recipes/v2/332f57e307ebf051c78293e752a35576?type=public&app_id=9c028717&app_key=847a590991d215af6af664e60bd35e3b"
+                    "href": "https://api.edamam.com/api/recipes/v2/332f57e307ebf051c78293e752a35576?type=public&app_id=9c028717&app_key=#{ENV['EDAMAM_APP_KEY']}"
                 }
             }
         },
@@ -10521,7 +10521,7 @@
             "_links": {
                 "self": {
                     "title": "Self",
-                    "href": "https://api.edamam.com/api/recipes/v2/5cba40cbda06b66cad29e4f0ea90a11e?type=public&app_id=9c028717&app_key=847a590991d215af6af664e60bd35e3b"
+                    "href": "https://api.edamam.com/api/recipes/v2/5cba40cbda06b66cad29e4f0ea90a11e?type=public&app_id=9c028717&app_key=#{ENV['EDAMAM_APP_KEY']}"
                 }
             }
         },
@@ -11341,7 +11341,7 @@
             "_links": {
                 "self": {
                     "title": "Self",
-                    "href": "https://api.edamam.com/api/recipes/v2/b7a1cae9fba2aabfba78d29f23606894?type=public&app_id=9c028717&app_key=847a590991d215af6af664e60bd35e3b"
+                    "href": "https://api.edamam.com/api/recipes/v2/b7a1cae9fba2aabfba78d29f23606894?type=public&app_id=9c028717&app_key=#{ENV['EDAMAM_APP_KEY']}"
                 }
             }
         },
@@ -12127,7 +12127,7 @@
             "_links": {
                 "self": {
                     "title": "Self",
-                    "href": "https://api.edamam.com/api/recipes/v2/ef87bebe29e4de6f5abe123a6f3a9835?type=public&app_id=9c028717&app_key=847a590991d215af6af664e60bd35e3b"
+                    "href": "https://api.edamam.com/api/recipes/v2/ef87bebe29e4de6f5abe123a6f3a9835?type=public&app_id=9c028717&app_key=#{ENV['EDAMAM_APP_KEY']}"
                 }
             }
         },
@@ -12953,7 +12953,7 @@
             "_links": {
                 "self": {
                     "title": "Self",
-                    "href": "https://api.edamam.com/api/recipes/v2/894585919c82be25d419f7b417c8e209?type=public&app_id=9c028717&app_key=847a590991d215af6af664e60bd35e3b"
+                    "href": "https://api.edamam.com/api/recipes/v2/894585919c82be25d419f7b417c8e209?type=public&app_id=9c028717&app_key=#{ENV['EDAMAM_APP_KEY']}"
                 }
             }
         },
@@ -13718,7 +13718,7 @@
             "_links": {
                 "self": {
                     "title": "Self",
-                    "href": "https://api.edamam.com/api/recipes/v2/ed4606cdce8755b8233fed65482615eb?type=public&app_id=9c028717&app_key=847a590991d215af6af664e60bd35e3b"
+                    "href": "https://api.edamam.com/api/recipes/v2/ed4606cdce8755b8233fed65482615eb?type=public&app_id=9c028717&app_key=#{ENV['EDAMAM_APP_KEY']}"
                 }
             }
         },
@@ -14470,7 +14470,7 @@
             "_links": {
                 "self": {
                     "title": "Self",
-                    "href": "https://api.edamam.com/api/recipes/v2/fd025153c648366b9666ba2d29bd2971?type=public&app_id=9c028717&app_key=847a590991d215af6af664e60bd35e3b"
+                    "href": "https://api.edamam.com/api/recipes/v2/fd025153c648366b9666ba2d29bd2971?type=public&app_id=9c028717&app_key=#{ENV['EDAMAM_APP_KEY']}"
                 }
             }
         },
@@ -15263,7 +15263,7 @@
             "_links": {
                 "self": {
                     "title": "Self",
-                    "href": "https://api.edamam.com/api/recipes/v2/c14daf372ea960065b9df6eeef9c240e?type=public&app_id=9c028717&app_key=847a590991d215af6af664e60bd35e3b"
+                    "href": "https://api.edamam.com/api/recipes/v2/c14daf372ea960065b9df6eeef9c240e?type=public&app_id=9c028717&app_key=#{ENV['EDAMAM_APP_KEY']}"
                 }
             }
         },
@@ -16062,7 +16062,7 @@
             "_links": {
                 "self": {
                     "title": "Self",
-                    "href": "https://api.edamam.com/api/recipes/v2/bc427884aaec338d2d56b2ce9363d46f?type=public&app_id=9c028717&app_key=847a590991d215af6af664e60bd35e3b"
+                    "href": "https://api.edamam.com/api/recipes/v2/bc427884aaec338d2d56b2ce9363d46f?type=public&app_id=9c028717&app_key=#{ENV['EDAMAM_APP_KEY']}"
                 }
             }
         }
