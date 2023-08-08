@@ -7,7 +7,7 @@ class VideoFacade
     if !results[:items].first.nil?
       @video = Video.new(results[:items].first)
     else
-      return {}
+      {}
     end
   end
 
