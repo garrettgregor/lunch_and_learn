@@ -51,4 +51,30 @@ RSpec.describe "Sessions Post Request" do
       expect(parsed[:data][:attributes][:api_key]).to eq(user_1.api_key)
     end
   end
+
+  context "sad path" do
+    it "renders credential errors when it can't find a user email" do
+      post api_v1_sessions_path, params: invalid_email_login_info.to_json, headers: valid_headers
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(401)
+
+      parsed = JSON.parse(response.body, symbolize_names: true)
+
+      expect(parsed).to have_key(:error)
+      expect(parsed[:error]).to eq("Invalid Email or Password")
+    end
+
+    it "renders credential errors when it can't authenticate with password" do
+      post api_v1_sessions_path, params: invalid_password_login_info.to_json, headers: valid_headers
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(401)
+
+      parsed = JSON.parse(response.body, symbolize_names: true)
+
+      expect(parsed).to have_key(:error)
+      expect(parsed[:error]).to eq("Invalid Email or Password")
+    end
+  end
 end
