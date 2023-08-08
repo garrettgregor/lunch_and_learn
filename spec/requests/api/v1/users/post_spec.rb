@@ -1,29 +1,25 @@
 require "rails_helper"
 
 RSpec.describe "Users Post Request" do
-  let!(:valid_attributes) {
-    (
-      {
-        name: "Odell",
-        email: "goodboy1@ruffruff.com",
-        password: "treats4lyf",
-        password_confirmation: "treats4lyf"
-      }
-    )
-  }
+  let!(:valid_attributes) do
+    {
+      name: "Odell",
+      email: "goodboy1@ruffruff.com",
+      password: "treats4lyf",
+      password_confirmation: "treats4lyf"
+    }
+  end
 
-  let!(:invalid_password_confirmation) {
-    (
-      {
-        name: "Odell",
-        email: "goodboy1@ruffruff.com",
-        password: "treats4lyf",
-        password_confirmation: "treats4lyf1"
-      }
-    )
-  }
+  let!(:invalid_password_confirmation) do
+    {
+      name: "Odell",
+      email: "goodboy1@ruffruff.com",
+      password: "treats4lyf",
+      password_confirmation: "treats4lyf1"
+    }
+  end
 
-  let(:valid_headers) { {'CONTENT_TYPE' => 'application/json'} }
+  let(:valid_headers) { { "CONTENT_TYPE" => "application/json" } }
 
   context "happy path" do
     it "can create a user" do
@@ -52,10 +48,10 @@ RSpec.describe "Users Post Request" do
       error = "Password confirmation doesn't match Password"
       expect(message[:errors].first[:title].first).to eq(error)
 
-      expect {
+      expect do
         post api_v1_users_path,
-        params: invalid_password_confirmation, headers: valid_headers, as: :json
-      }.to_not change(User, :count)
+             params: invalid_password_confirmation, headers: valid_headers, as: :json
+      end.to_not change(User, :count)
     end
 
     it "returns an error when email is already taken" do
@@ -67,10 +63,10 @@ RSpec.describe "Users Post Request" do
       error = "Email has already been taken"
       expect(message[:errors].first[:title].first).to eq(error)
 
-      expect {
+      expect do
         post api_v1_users_path,
-        params: invalid_password_confirmation, headers: valid_headers, as: :json
-      }.to_not change(User, :count)
+             params: invalid_password_confirmation, headers: valid_headers, as: :json
+      end.to_not change(User, :count)
     end
   end
 end

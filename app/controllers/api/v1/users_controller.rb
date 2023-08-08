@@ -5,11 +5,13 @@ module Api
 
       def create
         return create_user if @user.save
+
         ## Refactor: to account for all possible errors and individual messages
-        render json: ErrorSerializer.new(@user.errors.full_messages).user_errors, status: 404
+        render json: ErrorSerializer.new(@user.errors.full_messages).user_errors, status: :not_found
       end
 
       private
+
       def user_params
         params.permit(:name, :email, :password, :password_confirmation)
       end
@@ -20,7 +22,7 @@ module Api
 
       def create_user
         @user.update(user_params)
-        render json: UserSerializer.new(@user), status: 201
+        render json: UserSerializer.new(@user), status: :created
       end
     end
   end
