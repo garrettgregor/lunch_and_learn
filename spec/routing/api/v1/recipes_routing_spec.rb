@@ -4,12 +4,12 @@ RSpec.describe Api::V1::RecipesController, type: :routing do
   describe "routing" do
     context "index" do
       it "routes to #index" do
-        expect(get: "/api/v1/recipes").to route_to("api/v1/recipes#index")
+        expect(get: api_v1_recipes_path).to route_to("api/v1/recipes#index")
       end
 
       it "returns recipes for a specific country", :vcr do
         query = "Thailand"
-        visit "/api/v1/recipes?country=#{query}"
+        visit api_v1_recipes_path(country: query)
 
         expect(page.status_code).to eq(200)
 
@@ -40,17 +40,17 @@ RSpec.describe Api::V1::RecipesController, type: :routing do
       end
 
       it "returns recipes for an empty query", :vcr do
-        countries_data = File.read("./spec/fixtures/manual_data/recipe_data/countries.json")
-        saudi = File.read("./spec/fixtures/manual_data/recipe_data/saudi.json")
+        countries_data = File.read("./spec/fixtures/stubs/all_countries_only_greece.json")
+        greece = File.read("./spec/fixtures/stubs/greece_recipes.json")
 
-        stub_request(:get, "http://api.edamam.com/api/recipes/v2?app_id=9c028717&app_key=847a590991d215af6af664e60bd35e3b&type=public&q=Argentina")
-          .to_return(status: 200, body: saudi)
+        stub_request(:get, "http://api.edamam.com/api/recipes/v2?app_id=9c028717&app_key=#{ENV['EDAMAM_APP_KEY']}&type=public&q=Greece")
+          .to_return(status: 200, body: greece)
 
         stub_request(:get, "https://restcountries.com/v3.1/all?fields=name")
           .to_return(status: 200, body: countries_data)
 
         random_country = ""
-        visit "/api/v1/recipes?country=#{random_country}"
+        visit api_v1_recipes_path(country: random_country)
 
         expect(page.status_code).to eq(200)
 
@@ -79,7 +79,7 @@ RSpec.describe Api::V1::RecipesController, type: :routing do
       context "sad path" do
         it "returns an empty array for a country without recipes", :vcr do
           query = "Mayotta"
-          visit "/api/v1/recipes?country=#{query}"
+          visit api_v1_recipes_path(country: query)
 
           expect(page.status_code).to eq(200)
 
@@ -95,7 +95,7 @@ RSpec.describe Api::V1::RecipesController, type: :routing do
 
         it "returns an empty array for a query without recipes", :vcr do
           query = "78905"
-          visit "/api/v1/recipes?country=#{query}"
+          visit api_v1_recipes_path(country: query)
 
           expect(page.status_code).to eq(200)
 
