@@ -17,6 +17,7 @@ module Api
       end
 
       def new_user
+        user_params[:email].downcase!
         @user = User.new(user_params)
       end
 
