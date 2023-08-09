@@ -27,7 +27,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/garrettgregor/lunch_and_learn">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/logo.jpg" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Lunch and Learn</h3>
@@ -75,18 +75,19 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Lunch and Learn Schreenshot][product-screenshot]](https://github.com/jana-social/jana_social/assets/118634754/992a1888-36e7-4710-b7ab-4696d6826179)
+![Lunch and Learn Screenshot][product-screenshot]
+This is an api based application that allows users to discover new foods, how to cook them and learn a little bit about a different culture.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
-* [!Ruby on Rails](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
+* ![Ruby on Rails](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
 * ![Postgresql](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 * ![Youtube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)
 * [![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop)
 * [![Ruby Style Guide](https://img.shields.io/badge/code_style-community-brightgreen.svg)](https://rubystyle.guide)
-
+* [Readme Template](https://github.com/othneildrew/Best-README-Template)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -100,7 +101,6 @@
     rails db:create{drop,create,migrate,seed}
     ```
 
-
 ### Prerequisites
 
 * Ruby 3.2.2
@@ -109,23 +109,32 @@
 
 ### Installation
 
-1. Get a free API Key and Application Key at [Edamam Recipe API](https://developer.edamam.com/edamam-recipe-api)
+1. Get a free API Key and/or Application Keys at:
+    1. [Edamam](https://developer.edamam.com/edamam-recipe-api)
+    1. [Youtube](https://developers.google.com/youtube/v3/getting-started)
+    1. [Unsplash](https://unsplash.com/documentation)
+    1. [API Ninjas](https://api-ninjas.com/register)
+
 1. Clone the repo
 
     ```zsh
     git clone https://github.com/garrettgregor/lunch_and_learn.git
     ``````
+
 1. Install NPM packages
 
     ```zsh
     bundle install
     ```
 
-1. Enter your API in `application.yml`
+1. Enter your Keys in `application.yml`
 
     ```yml
-    EDAMAM_APP_KEY: <application_key>
-    EDAMAM_APP_ID: <app_id>
+    EDAMAM_APP_KEY: <edamam_app_key>
+    EDAMAM_APP_ID: <edamam_app_id>
+    YOUTUBE_API_KEY: <youtube_key>
+    UNSPLASH_API_KEY: <unsplash_authorization_token>
+    API_NINJA_API_KEY: <api_ninja_x_api_key>
     ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -133,27 +142,32 @@
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Users can:
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+* Register and Login
+![Registration][registration-screenshot]
+![Log In][log_in-screenshot]
+* Discover New Recipes from Random Countries
+![Discover][product-screenshot]
+![Learning Resources][learning_resources-screenshot]
+* Save Favorite Recipes
+![Favorites][favorites-screenshot]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+* [ ] Validate countries using the [Rest Countries API](https://restcountries.com/)
+* [ ] Add an endpoint to delete a favorite
+* [ ] Utilize caching or background workers to optimize api calls
+  * [ ] Deploy on Render
+* [ ] Build a front end using React
+
 
 See the [open issues](https://github.com/garrettgregor/lunch_and_learn/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -171,8 +185,6 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- LICENSE -->
 ## License
 
@@ -180,29 +192,23 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@garrettgregor](https://twitter.com/garrettgregor) - garrett.gregor@gmail.com.com
+Your Name - [@garrettgregor](https://twitter.com/garrettgregor) - garrett.gregor@gmail.com
 
 Project Link: [https://github.com/garrettgregor/lunch_and_learn](https://github.com/garrettgregor/lunch_and_learn)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* [Mike Dao](https://github.com/mikedao)
+* [Erin Pintozzi](https://github.com/epintozzi)
+![The 2303 Cohort][2303-cohort]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
@@ -218,7 +224,12 @@ Project Link: [https://github.com/garrettgregor/lunch_and_learn](https://github.
 [license-url]: https://github.com/garrettgregor/lunch_and_learn/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/garrett-gregor
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: images/discover_recipes.png
+[registration-screenshot]: images/registration.png
+[log_in-screenshot]: images/log_in.png
+[learning_resources-screenshot]: images/learning_resources.png
+[favorites-screenshot]: images/favorites.png
+[2303-cohort]: images/2303.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
