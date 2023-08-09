@@ -3,6 +3,14 @@ module Api
     class FavoritesController < ApplicationController
       before_action :find_user
 
+      def index
+        if @user.present?
+          render json: FavoritesSerializer.new(@user.favorites), status: :ok
+        else
+          render json: ErrorSerializer.new("User credentials invalid").credential_errors, status: :unauthorized
+        end
+      end
+
       def create
         if @user.present?
           @user.favorites.create!(favorite_params)
