@@ -11,7 +11,7 @@ RSpec.describe "Favorites Post Request" do
   end
 
   let!(:valid_api_key) { user_1.api_key }
-  let!(:invalid_api_key) { user_1.api_key + "1" }
+  let!(:invalid_api_key) { "#{user_1.api_key}1" }
 
   let!(:valid_post_info) do
     {
