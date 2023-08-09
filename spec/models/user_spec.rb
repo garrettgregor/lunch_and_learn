@@ -20,5 +20,16 @@ describe User, type: :model do
 
   describe "relationships" do
     it { should have_many(:favorites) }
+
+    it "removes favorites on deletion" do
+      user_1 = User.create!(name: "Testarossa", email: "testarossa@test.com", password: "test", password_confirmation: "test")
+      create_list(:favorite, 3, user_id: user_1.id)
+
+      expect(user_1.favorites.size).to eq(3)
+
+      user_1.destroy
+      
+      expect(Favorite.all.size).to eq(0)
+    end
   end
 end
