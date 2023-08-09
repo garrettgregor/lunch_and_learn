@@ -17,4 +17,8 @@ describe User, type: :model do
       expect(user_1.api_key.length).to eq(24)
     end
   end
+
+  describe "relationships" do
+    it { should have_many(:favorites) }
+  end
 end
