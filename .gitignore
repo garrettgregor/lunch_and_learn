@@ -33,3 +33,6 @@
 
 # Ignore SimpleCov coverage report
 /coverage
+
+# Ignore JetBrains
+.idea
