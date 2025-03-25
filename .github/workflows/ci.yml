@@ -61,11 +61,16 @@ jobs:
           bundler-cache: true
       - name: Add platform to lockfile
         run: bundle lock --add-platform x86_64-linux
+      - name: Prepare test database
+        env:
+          RAILS_ENV: test
+          DATABASE_URL: postgres://postgres:postgres@localhost:5432
+        run: bin/rails db:test:prepare
       - name: Run tests
         env:
           RAILS_ENV: test
           DATABASE_URL: postgres://postgres:postgres@localhost:5432
-        run: bin/rails db:test:prepare bundle exec rspec
+        run: bundle exec rspec
       - name: Keep screenshots from failed system tests
         uses: actions/upload-artifact@v4
         if: failure()
