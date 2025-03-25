@@ -6,7 +6,7 @@ module Api
         # Below is close, but doesn't work for Åland Islands
         ## query = params[:country].chars.map { |char| char.ascii_only? ? char : CGI.escape(char) }.join
         # refactor to a LearningResourcesFacade?
-        country = (params[:country].presence || CountryFacade.new.random_country.name)
+        country = params[:country].presence || CountryFacade.new.random_country.name
         video = VideoFacade.new.video_resources(country)
         photos = PhotoFacade.new.photos_from(country)
 
