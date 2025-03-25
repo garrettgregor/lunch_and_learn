@@ -64,7 +64,7 @@ jobs:
       - name: Set up .env file
         run: echo -e "EDAMAM_APP_KEY=xxxxxxxxxxxxx\nEDAMAM_APP_ID=xxxxxxxxxxxxx\nYOUTUBE_API_KEY=xxxxxxxxxxxxx\nUNSPLASH_API_KEY=xxxxxxxxxxxxx\nAPI_NINJA_API_KEY=xxxxxxxxxxxxx" > .env
       - name: Use VCR cassettes
-        run: cp -r spec/fixtures/vcr_cassettes ${{ github.workspace }}/spec/fixtures/vcr_cassettes
+        run: cp -r spec/fixtures/vcr_cassettes/* ${{ github.workspace }}/spec/fixtures/vcr_cassettes
       - name: Prepare test database
         env:
           RAILS_ENV: test
