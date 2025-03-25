@@ -36,3 +36,6 @@
 
 # Ignore JetBrains
 .idea
+
+# Ignore ENV secrets
+.env
