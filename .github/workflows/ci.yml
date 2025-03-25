@@ -62,11 +62,7 @@ jobs:
       - name: Add platform to lockfile
         run: bundle lock --add-platform x86_64-linux
       - name: Set up .env file
-        run: echo "EDAMAM_APP_KEY=xxxxxxxxxxxxx" > .env
-        run: echo "EDAMAM_APP_ID=xxxxxxxxxxxxx" > .env
-        run: echo "YOUTUBE_API_KEY=xxxxxxxxxxxxx" > .env
-        run: echo "UNSPLASH_API_KEY=xxxxxxxxxxxxx" > .env
-        run: echo "API_NINJA_API_KEY=xxxxxxxxxxxxx" > .env
+        run: echo -e "EDAMAM_APP_KEY=xxxxxxxxxxxxx\nEDAMAM_APP_ID=xxxxxxxxxxxxx\nYOUTUBE_API_KEY=xxxxxxxxxxxxx\nUNSPLASH_API_KEY=xxxxxxxxxxxxx\nAPI_NINJA_API_KEY=xxxxxxxxxxxxx" > .env
       - name: Use VCR cassettes
         run: cp -r spec/fixtures/vcr_cassettes ${{ github.workspace }}/spec/fixtures/vcr_cassettes
       - name: Prepare test database
