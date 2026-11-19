@@ -103,7 +103,7 @@ This is an api based application that allows users to discover new foods, how to
 
 ### Prerequisites
 
-* Ruby 3.2.2
+* Ruby 3.4.12
 * Rails 7.0.6
 * Postgresql 14
 
